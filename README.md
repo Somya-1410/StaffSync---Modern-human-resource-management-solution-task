@@ -1,1 +1,156 @@
-# StaffSync---Modern-human-resource-management-solution-task
+<div align="center">
+
+# StaffSync
+
+### Modern people operations for growing teams
+
+Bring your people, attendance, leave, and team updates together in one clear workspace.
+
+<p>
+  <img src="https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white" alt="React 18">
+  <img src="https://img.shields.io/badge/Node.js-Express-339933?logo=nodedotjs&logoColor=white" alt="Node.js and Express">
+  <img src="https://img.shields.io/badge/MongoDB-ready-47A248?logo=mongodb&logoColor=white" alt="MongoDB ready">
+  <img src="https://img.shields.io/badge/Auth-JWT-000000?logo=jsonwebtokens&logoColor=white" alt="JWT authentication">
+  <img src="https://img.shields.io/badge/Status-Educational%20project-7957E9" alt="Educational project">
+</p>
+
+**[Features](#-features) · [Quick start](#-quick-start) · [Demo login](#-demo-login) · [API](#-api)**
+
+</div>
+
+---
+
+## About StaffSync
+
+StaffSync is a modern, role-aware human resource management application for HR teams, managers, and employees. It brings day-to-day people operations into one place: HR teams can review leave requests and keep track of attendance, managers can stay informed about their teams, and employees have a simple way to follow company updates.
+
+The project combines a responsive React dashboard with a Node.js and Express API. It is a working foundation for a MERN application, with MongoDB and Mongoose configuration ready for persistent data as the project grows.
+
+## ✨ Features
+
+| Area | What you can do |
+| --- | --- |
+| **HR dashboard** | Review workforce metrics, attendance, team status, and leave requests |
+| **Leave management** | Approve or decline requests and see their updated status |
+| **Attendance** | View the weekly attendance chart and export a CSV report |
+| **Employee onboarding** | Open the employee creation form and enter profile details |
+| **Announcements** | Compose and publish a team announcement |
+| **Authentication** | Sign in with a selected role and log out from the profile menu |
+| **Responsive layout** | Use the dashboard on desktop and mobile-sized screens |
+
+## 🧰 Tech stack
+
+- **Frontend:** React 18, JavaScript, CSS, Vite
+- **Backend:** Node.js, Express.js
+- **Authentication:** JSON Web Tokens (JWT)
+- **Database-ready:** MongoDB and Mongoose
+- **API:** REST endpoints with JSON responses
+
+## 🚀 Quick start
+
+### Requirements
+
+- Node.js 18 or newer
+- npm 9 or newer
+
+### Install and run
+
+```bash
+npm install
+npm run dev
+```
+
+Open the app and API:
+
+- **Web app:** [http://localhost:5173](http://localhost:5173)
+- **API health check:** [http://localhost:5000/api/health](http://localhost:5000/api/health)
+
+The development command starts the Vite frontend and Express API together. Vite proxies `/api` requests to the backend.
+
+### Environment configuration
+
+The API can run with its defaults for local development. To configure environment variables, copy the sample file:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Then edit `.env`:
+
+```env
+PORT=5000
+MONGODB_URI=mongodb://127.0.0.1:27017/staffsync
+JWT_SECRET=replace-with-a-long-random-secret
+```
+
+> **Current data storage:** The API currently uses in-memory sample data. MongoDB and Mongoose are included as the planned persistence layer, but database models and MongoDB connection are not yet implemented.
+
+## 🔐 Demo login
+
+Choose a role on the sign-in screen and use one of these example accounts:
+
+| Example user | Email | Password | Role |
+| --- | --- | --- | --- |
+| Olivia Rhye | `olivia@staffsync.demo` | `StaffSync@123` | HR manager |
+| Phoenix Baker | `phoenix@staffsync.demo` | `StaffSync@123` | Manager |
+| Lana Steiner | `lana@staffsync.demo` | `StaffSync@123` | Employee |
+
+> These are example values, **not separate seeded accounts**. The current demo login accepts any valid email and any non-empty password; the selected role is used for the session. Authentication is intended for local demonstration, not production use.
+
+## 📡 API
+
+| Method | Endpoint | Purpose |
+| --- | --- | --- |
+| `GET` | `/api/health` | Check API availability |
+| `POST` | `/api/auth/login` | Create a demo JWT session |
+| `GET` | `/api/employees` | Get sample employee records |
+| `GET` | `/api/leave-requests` | Get leave requests |
+| `PATCH` | `/api/leave-requests/:id` | Update a request to Approved or Declined |
+| `GET` | `/api/announcements` | Get sample announcements |
+
+## 📂 Project structure
+
+```text
+StaffSync/
+├── server/
+│   └── index.js          # Express API and demo authentication
+├── src/
+│   ├── main.jsx          # React dashboard and interactions
+│   └── styles.css        # Responsive styling
+├── .env.example          # Environment variable template
+├── .gitignore            # Git exclusions
+├── index.html             # Vite HTML entry point
+├── package.json           # Dependencies and scripts
+├── package-lock.json      # Locked dependency versions
+└── vite.config.js         # Vite server and API proxy
+```
+
+## 📜 Available scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the frontend and API together |
+| `npm run client` | Start only the Vite frontend |
+| `npm run server` | Start only the Express API |
+| `npm run build` | Build the frontend for production |
+| `npm run preview` | Preview the production frontend build |
+
+## 🗺️ Roadmap
+
+- Connect MongoDB and add Mongoose models
+- Add server-side JWT verification and protected routes
+- Build full HR, manager, and employee workspaces
+- Persist employee profiles and announcements
+- Implement attendance check-in and check-out
+- Expand reporting, payroll, and notification workflows
+- Add production deployment configuration
+
+## 📄 License
+
+This project is intended for educational, portfolio, and product-prototyping use.
+
+---
+
+<div align="center">
+Built with React, Node.js, Express, and a focus on better people operations.
+</div>
